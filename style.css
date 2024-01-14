@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: rgb(111, 84, 246);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 50px;
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+}
+
+#country-input {
+  height: 50px;
+  width: 400px;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+  border: none;
+}
+
+#input-btn {
+  height: 50px;
+  width: 80px;
+  border-radius: 20px;
+  margin-left: -80px;
+  background: rgb(131, 98, 214);
+  border: none;
+}
+
+#country-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+}
