@@ -32,6 +32,7 @@ const showCountryInfo = async () => {
 
       if (countryName.includes(inputName)) {
         const flagDisplay = document.createElement("img");
+        flagDisplay.src = countryFlag; //
         countrySection.appendChild(flagDisplay);
 
         const nameDisplay = document.createElement("h2");
