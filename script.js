@@ -28,7 +28,9 @@ const showCountryInfo = async () => {
       const countryCapital = countryInfo.capital;
       const countryContinent = countryInfo.region;
       const countryFlag = countryInfo.flags.png;
-      const countryLanguages = countryInfo.languages;
+      const countryLanguages = countryInfo.languages
+        ? Object.values(countryInfo.languages).join(", ")
+        : "N/A";
 
       if (countryName.includes(inputName)) {
         const flagDisplay = document.createElement("img");
@@ -36,17 +38,27 @@ const showCountryInfo = async () => {
         countrySection.appendChild(flagDisplay);
 
         const nameDisplay = document.createElement("h2");
-        nameDisplay.innerHTML = `Country Name: ${countryInfo.name.common}`;
+        nameDisplay.innerHTML = `${countryInfo.name.common}`;
         countrySection.appendChild(nameDisplay);
 
         const capitalDisplay = document.createElement("h4");
         capitalDisplay.innerHTML = `Capital: ${countryCapital}`;
         countrySection.appendChild(capitalDisplay);
+
+        const languageDisplay = document.createElement("p");
+        languageDisplay.innerHTML = `Spoken language'(s): ${countryLanguages}`;
+        countrySection.appendChild(languageDisplay);
       }
     });
   } catch (error) {
     console.error("Data not fetching or displaying", error);
   }
 };
+
+countryInput.addEventListener("keyup", function () {
+  if (event.key === "Enter") {
+    showCountryInfo();
+  }
+});
 
 inputBtn.addEventListener("click", showCountryInfo);
