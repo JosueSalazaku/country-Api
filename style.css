@@ -5,7 +5,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: rgb(111, 84, 246);
+  background: rgb(41, 31, 91);
 }
 
 main {
@@ -16,8 +16,11 @@ main {
   width: 100vw;
   height: 100vh;
   margin-top: 50px;
+  color: white;
 }
-
+h1 {
+  padding: 15px;
+}
 label {
   display: flex;
   flex-direction: row;
@@ -26,24 +29,30 @@ label {
 #country-input {
   height: 50px;
   width: 400px;
-  background: rgb(255, 255, 255);
-  border-radius: 20px;
+  background: none;
+  border-radius: 50px;
   font-size: 35px;
   color: rgb(0, 0, 0);
-  border: none;
+  border: 2px solid rgb(131, 98, 214);
 }
 
 #input-btn {
   height: 50px;
   width: 80px;
-  border-radius: 20px;
+  border-radius: 50px;
   margin-left: -80px;
+  margin-top: 2px;
   background: rgb(131, 98, 214);
-  border: none;
+  border: 2px solid rgb(131, 98, 214);
 }
 
 #country-section {
   display: flex;
   flex-direction: column;
   margin-top: 35px;
+}
+
+img {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
