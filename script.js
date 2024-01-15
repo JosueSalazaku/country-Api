@@ -31,6 +31,7 @@ const showCountryInfo = async () => {
       const countryLanguages = countryInfo.languages
         ? Object.values(countryInfo.languages).join(", ")
         : "N/A";
+      const countryPopulation = countryInfo.population;
 
       if (countryName.includes(inputName)) {
         const flagDisplay = document.createElement("img");
@@ -52,6 +53,10 @@ const showCountryInfo = async () => {
         const languageDisplay = document.createElement("p");
         languageDisplay.innerHTML = `Spoken language'(s): ${countryLanguages}`;
         countrySection.appendChild(languageDisplay);
+
+        const populationDisplay = document.createElement("p");
+        populationDisplay.innerHTML = `Population: ${countryPopulation}`;
+        countrySection.appendChild(populationDisplay);
       }
     });
   } catch (error) {
