@@ -31,9 +31,10 @@ label {
   width: 400px;
   background: none;
   border-radius: 50px;
-  font-size: 35px;
-  color: rgb(0, 0, 0);
+  font-size: 25px;
+  color: white;
   border: 2px solid rgb(131, 98, 214);
+  padding-left: 25px;
 }
 
 #input-btn {

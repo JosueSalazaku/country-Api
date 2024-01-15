@@ -34,7 +34,7 @@ const showCountryInfo = async () => {
 
       if (countryName.includes(inputName)) {
         const flagDisplay = document.createElement("img");
-        flagDisplay.src = countryFlag; //
+        flagDisplay.src = countryFlag;
         countrySection.appendChild(flagDisplay);
 
         const nameDisplay = document.createElement("h2");
@@ -44,6 +44,10 @@ const showCountryInfo = async () => {
         const capitalDisplay = document.createElement("h4");
         capitalDisplay.innerHTML = `Capital: ${countryCapital}`;
         countrySection.appendChild(capitalDisplay);
+
+        const continetDisplay = document.createElement("h4");
+        continetDisplay.innerHTML = `Continent: ${countryContinent}`;
+        countrySection.appendChild(continetDisplay);
 
         const languageDisplay = document.createElement("p");
         languageDisplay.innerHTML = `Spoken language'(s): ${countryLanguages}`;
