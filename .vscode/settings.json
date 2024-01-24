@@ -1,0 +1,14 @@
+{
+  "json.schemas": [],
+  "workbench.colorCustomizations": {
+    "[Min Dark]": {
+      "variables": "#569CD6"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Min Dark]": {
+      "variables": "#569CD6"
+    }
+  },
+  "workbench.colorTheme": "Min Dark"
+}

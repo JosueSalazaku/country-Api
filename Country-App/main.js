@@ -1,3 +1,4 @@
+import { countries } from "../countries";
 const countryInput = document.getElementById("country-input");
 const inputBtn = document.getElementById("input-btn");
 const countrySection = document.querySelector("#country-section");
@@ -15,6 +16,13 @@ const getApiData = async () => {
 getApiData().then((allCountryData) => {
   console.log(allCountryData);
 });
+
+// Function to filter countries based on user input
+const filterCountries = (input) => {
+  return countries.filter((country) =>
+    country.toLowerCase().includes(input.toLowerCase())
+  );
+};
 
 const showCountryInfo = async () => {
   const inputName = countryInput.value.toLowerCase();
