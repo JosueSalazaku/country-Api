@@ -17,13 +17,6 @@ getApiData().then((allCountryData) => {
   console.log(allCountryData);
 });
 
-// Function to filter countries based on user input
-const filterCountries = (input) => {
-  return countries.filter((country) =>
-    country.toLowerCase().includes(input.toLowerCase())
-  );
-};
-
 const showCountryInfo = async () => {
   const inputName = countryInput.value.toLowerCase();
   const allCountryData = await getApiData();
@@ -70,6 +63,21 @@ const showCountryInfo = async () => {
   } catch (error) {
     console.error("Data not fetching or displaying", error);
   }
+};
+
+// Function to filter countries based on user input
+const filterCountries = (input) => {
+  return countries.filter((country) =>
+    country.toLowerCase().includes(input.toLowerCase())
+  );
+};
+
+// Function to update auto-suggestions
+const updateSuggestions = (inputValue) => {
+  const suggestions = filterCountries(inputValue);
+
+  // Display suggestions in some way (e.g., dropdown, list)
+  console.log("Suggestions:", suggestions);
 };
 
 countryInput.addEventListener("keyup", function () {
