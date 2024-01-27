@@ -1,4 +1,4 @@
-import { countries } from "../countries";
+import { countries } from "./countries.js";
 const countryInput = document.getElementById("country-input");
 const inputBtn = document.getElementById("input-btn");
 const countrySection = document.querySelector("#country-section");
@@ -72,18 +72,38 @@ const filterCountries = (input) => {
   );
 };
 
-// Function to update auto-suggestions
 const updateSuggestions = (inputValue) => {
+  const suggestionsContainer = document.getElementById("suggestions-container");
+  suggestionsContainer.innerHTML = ""; // Clear previous suggestions
+
   const suggestions = filterCountries(inputValue);
 
-  // Display suggestions in some way (e.g., dropdown, list)
-  console.log("Suggestions:", suggestions);
+  // Display suggestions in the suggestions container
+  suggestions.forEach((suggestion) => {
+    const suggestionItem = document.createElement("div");
+    suggestionItem.classList.add("suggestion-item");
+    suggestionItem.textContent = suggestion;
+
+    suggestionItem.addEventListener("click", () => {
+      // When a suggestion is clicked, populate the input field
+      countryInput.value = suggestion;
+      suggestionsContainer.style.display = "none"; // Hide suggestions
+      showCountryInfo(inputValue);
+    });
+
+    suggestionsContainer.appendChild(suggestionItem);
+  });
+
+  // Show or hide the suggestions container based on the number of suggestions
+  suggestionsContainer.style.display =
+    suggestions.length > 0 ? "block" : "none";
 };
 
-countryInput.addEventListener("keyup", function () {
-  if (event.key === "Enter") {
-    showCountryInfo();
-  }
+countryInput.addEventListener("input", function () {
+  const inputValue = this.value;
+  updateSuggestions(inputValue);
 });
 
-inputBtn.addEventListener("click", showCountryInfo);
+inputBtn.addEventListener("click", function () {
+  showCountryInfo(countryInput.value);
+});
